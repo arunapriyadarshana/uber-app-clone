@@ -19,7 +19,7 @@ const SignUp = () => {
     <ScrollView className="flex-1 bg-white">
       <View className="flex-1 bg-white">
         <View className="relative w-full h-[200px]">
-          <Image source={images.signUpCar} className="z-0 w-full h-[200px]" />
+          <Image source={images.signUpCar} className="z-0 w-full h-[220px]" />
           <Text className="absolute text-2xl text-black font-JakartaSemiBold bottom-5 left-5">
             Welcome 👋
           </Text>
@@ -31,7 +31,7 @@ const SignUp = () => {
             placeholder="Enter Your Email"
             icon={icons.email}
             value={form.email}
-            onChange={(value) => setform({ ...form, email: value })}
+            onChange={(event) => setform({ ...form, email: event.nativeEvent.text })}
           />
           <InputField
             label="Password"
@@ -39,7 +39,7 @@ const SignUp = () => {
             icon={icons.lock}
             secureTextEntry={true}
             value={form.password}
-            onChange={(value) => setform({ ...form, password: value })}
+            onChange={(event) => setform({ ...form, password: event.nativeEvent.text })}
           />
           <CustomButton
             title="Sign Up"
